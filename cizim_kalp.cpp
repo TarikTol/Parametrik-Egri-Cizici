@@ -2,6 +2,9 @@
 #include <cmath>
 #include "canvas.cpp"
 using namespace std;
+
+
+
 //x'in t ye bağlı parametrik fonksiyonu
 // x(t) = 16 * sin(t)^3
 //eğer x(t) = 3*sint(t)+5 olsaydı kullanım şekli şu şekilde olurdu:
@@ -50,7 +53,7 @@ int main() {
 
 
 
-    int ornekNoktaSayisi = 8; // 0'dan 2PI'ye kadar 8 özel nokta seçeceğiz
+    int ornekNoktaSayisi = 8; // 0'dan 2PI'ye kadar 8 nokta seçeceğiz
     double adimT = (2.0 * PI) / ornekNoktaSayisi; // PI/4 (45 derece) adımlarla
 
     for(int i = 0; i < ornekNoktaSayisi; i++) {
@@ -60,19 +63,18 @@ int main() {
         double anlikX = Parametrik_X_Fonksiyonu(o_anki_t);
         double anlikY = Parametrik_Y_Fonksiyonu(o_anki_t);
 
-        // 1. Orijinden (0,0) o noktaya Konum Vektörünü (Doğruyu) Çiz
+        // 1. Orijinden (0,0) o noktaya Konum Vektörünü (Doğruyu) Çiziyoruz
         cizim.drawLine(0.0, 0.0, anlikX, anlikY, "blue");
 
-        // 2. Tam o noktanın üzerine belirgin bir nokta koy (Yarıçapı 3.0 olsun)
+        // 2. Tam o noktanın üzerine belirgin bir nokta koyuyoruz (Yarıçapı 3.0 olsun)
         cizim.drawPoint(anlikX, anlikY, "black", 3.0);
 
-        // 3. (OPSİYONEL ŞOV) Noktanın hemen yanına t'nin kaçıncı adım olduğunu yazdır
-        // canvas.cpp içindeki drawText metodunu kullanıyoruz
+        // Noktanın hemen yanına t'nin kaçıncı adım olduğunu yazdırıyoruz
         std::string etiket = "t" + std::to_string(i); 
         cizim.drawText(etiket, anlikX + 0.5, anlikY + 0.5, "black", 12); 
     }
 
-    
+    //Bellek temizliği
     delete[] px;
     delete[] py;
     px = nullptr;
