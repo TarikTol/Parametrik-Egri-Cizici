@@ -12,7 +12,7 @@ double Kutupsal_R_Fonksiyonu(double theta) {
     double n = 3.0; 
     
     // Şekli orijin etrafında ne kadar döndürmek istiyorsan o açıyı (radyan) buraya yaz:
-    double dondurmeAcisi = PI / 3.0; // Örn: PI/4 (45 derece) //Döndürmek istemiyorsanız 0 yazabilirsinixz
+    double dondurmeAcisi = PI / 3.0; // Örn: PI/3 (60 derece) //Döndürmek istemiyorsanız 0 yazabilirsinixz
 
     // Formüldeki her theta yerine (theta - dondurmeAcisi) yazıyoruz:
     return a * sin(n * (theta - dondurmeAcisi)); //İstediğiniz trigonometri fonksiyonunu kullanabilirsiniz,
